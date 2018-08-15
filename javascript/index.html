@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test Javascript</title>
+</head>
+
+<body>
+
+<input type="button" value="紅色" onclick=" document.bgColor='red';  " >
+<input type="button" value="黃色" onclick=" document.bgColor='#FFFF00';  " >
+<input type="button" value="藍色" onclick=" document.bgColor='#0000FF';  " >
+
+<hr />
+
+<input type="button" value="紅色" onmouseover=" document.bgColor='#FF0000'; " >
+<input type="button" value="黃色" onmouseover=" document.bgColor='#FFFF00';  " >
+<input type="button" value="藍色" onmouseover=" document.bgColor='#0000FF';  " >
+
+
+<hr />
+
+<input type="button" value="你好嗎？" onclick=" alert('Hello'); ">
+
+<hr />
+
+<input type="button" value="連接Google" onclick=" window.open('http://www.google.com/');  " >
+
+<hr />
+
+<p>羊死掉了，猜一成語 <input type="button" value="看答案" onclick=" 
+   document.getEledmentById('msg').innerHTML = '揚眉吐氣'; " ></p>
+
+<p>答案是：<span id="msg">???</span></p>
+
+<hr />
+
+<img src="images/head1.jpg"
+  onmouseover="this.src='images/head2.jpg'; this.width=500; "
+  onmouseout="this.src='images/head1.jpg'; this.width=195; " >
+
+</body>
+
+</html>

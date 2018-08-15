@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Form Check</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+function check_data()
+{
+   var flag = true;
+   var message = '';
+
+  
+   // ---------- Check 1 ----------
+   // 檢查密碼長度 (文字欄位長度至少四個)
+   var pw = document.getElementById('password').value;
+   if(pw.length<4)
+   {
+      flag = false;
+      message += '(1) 密碼至少要填入四個字\n';
+   }
+
+
+   // ---------- Check 2 ----------
+   /* 檢查電話號碼 (不能為空白，且必須是數字)
+   必須  不是空白 && 是數字
+   必須   !空白   && !非數字
+   錯的檢查  ! ( !空白  && !非數字 )
+   錯的檢查  !!空白  ||  !!非數字 
+   錯的檢查    空白  ||  非數字 
+   if( xxx=='' || isNaN(xxx) )
+   */
+   
+   // 檢查電話號碼 (不能為空白，且必須是數字)   
+   var phone = document.getElementById('phone');
+   if( phone.value=='' || isNaN(phone.value))
+   {
+      flag = false;
+      message += '(2) 電話號碼有誤\n';
+   }
+  
+  
+   // ---------- Check 3 ----------
+   // 檢查興趣的項目 (選項按鈕radio至少要勾選兩個)
+   cnt_checkbox = 0;
+   cnt_checkbox += (document.getElementById('hobby1').checked) ? 1 : 0;
+   cnt_checkbox += (document.getElementById('hobby2').checked) ? 1 : 0;
+   cnt_checkbox += (document.getElementById('hobby3').checked) ? 1 : 0;
+   cnt_checkbox += (document.getElementById('hobby4').checked) ? 1 : 0;
+   if(cnt_checkbox<2)
+   {
+      flag = false;
+      message += '(3) 請至少選兩個興趣\n';
+   }
+   
+  
+   // 最後處理
+   if(!flag) 
+   {
+      alert(message);
+   }
+   
+   return flag;
+}
+</script>
+</head>
+
+<body>
+<h2>各種表單元件的資料檢查 (更多變化)</h2>
+<form method="post" action="result.php" onSubmit="return check_data();">
+
+  <h3>問題一：密碼至少4個字母 (文字密碼欄位 password）</h3>
+  <p>密碼 <input type="password" name="password" id="password" /></p>
+    
+  
+  <h3>問題二：電話號碼不能為空白，且必須是數字 (文字欄位 text）</h3>
+  <p>電話 <input type="text" name="phone" id="phone" />
+  </p>
+  
+  <h3>問題三：興趣至少勾選2項 (核取方塊 checkbox)</h3>
+  <p>
+    <input type="checkbox" name="hobby1" id="hobby1" value="Y" />音樂
+    <input type="checkbox" name="hobby2" id="hobby2" value="Y" />閱讀
+    <input type="checkbox" name="hobby3" id="hobby3" value="Y" />美術
+    <input type="checkbox" name="hobby4" id="hobby4" value="Y" />旅遊
+  </p>
+  
+  
+  
+  <p><input type="submit" value="送出資料" /></p>
+</form>
+
+</body>
+</html>
