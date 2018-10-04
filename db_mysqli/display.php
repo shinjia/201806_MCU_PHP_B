@@ -13,6 +13,16 @@ $sqlstr = "SELECT * FROM person WHERE uid=" . $uid;
 // 執行 SQL
 $result = mysqli_query($link, $sqlstr) or die(ERROR_QUERY);
 
+/*
+$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+echo '<pre>';
+print_r($row);
+echo '</pre>';
+
+exit;
+*/
+
+
 if($row=mysqli_fetch_array($result, MYSQLI_ASSOC))
 {
    $uid      = $row['uid'];

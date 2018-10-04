@@ -71,7 +71,7 @@ HEREDOC;
 else
 {
    // 無法執行 query 指令時
-   $html = error_message('list_all');
+   $html = error_message('find_x');
 }
 
 
