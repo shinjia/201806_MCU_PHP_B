@@ -3,7 +3,7 @@
 include 'config.php';
 
 $page = isset($_GET['page']) ? $_GET['page'] : 1;   // 目前的頁碼
-
+// $numpp = isset($_GET['numpp']) ? $_GET['numpp'] : 20;   
 
 $numpp = 20; // 每頁的筆數
 
@@ -33,6 +33,7 @@ $sqlstr .= " LIMIT " . $tmp_start . "," . $numpp;
 
 $result = mysqli_query($link, $sqlstr);
 
+$total_rec = mysqli_num_rows($result);
 
 $data = '';
 while($row=mysqli_fetch_array($result))

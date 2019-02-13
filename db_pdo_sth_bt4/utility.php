@@ -5,13 +5,13 @@ function error_message($type='', $ext='')
    $a_msg = array(
      'add_save'    => '無法新增資料 (add_save)',
      'display'     => '無法列出資料 (display)',
-     'list_all'    => '無法列出資料 (list_all)',     
-     'find_x'      => '無法查詢資料 (find_x)',
+     'list_all'    => '無法列出資料 (list_all)',
      'list_page'   => '無法列出資料 (list_page)',
      'list_page_1' => '無法列出資料 (list_page_1)',
      'list_page_2' => '無法列出資料 (list_page_2)',
      'edit'        => '無法編輯資料 (edit)',
      'edit_save'   => '無法修改資料 (edit_save)',
+     'find_x'      => '無xxxxx',
      'delete'      => '無法刪除資料 (delete)',
 	   'default'     => '有錯誤發生！' );
 
@@ -21,7 +21,7 @@ function error_message($type='', $ext='')
    {
       $msg = '檔案資料『" . $ext . "』不存在';
    }
-   
+
    $ret_str  = '<h2>錯誤警告</h2>';
    $ret_str .= '<p>' . $msg . '</p>';
 

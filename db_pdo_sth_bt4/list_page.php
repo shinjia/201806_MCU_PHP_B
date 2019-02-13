@@ -48,9 +48,11 @@ while($row = $sth->fetch(PDO::FETCH_ASSOC))
        <td>{$height}</td>
        <td>{$weight}</td>
        <td>{$remark}</td>
-       <td><a href="display.php?uid=$uid" class="btn-info" >詳細</a></td>
-       <td><a href="edit.php?uid=$uid" class="btn-info" >修改</a></td>
-       <td><a href="delete.php?uid=$uid" class="btn-danger"  onClick="return confirm('確定要刪除嗎？');">刪除</a></td>
+       <td class="table-secondary">
+         <a href="display.php?uid=$uid" class="btn btn-primary">詳細</a>
+         <a href="edit.php?uid=$uid" class="btn btn-info">修改</a>
+         <a href="delete.php?uid=$uid" class="btn btn-danger" onClick="return confirm('確定要刪除嗎？');">刪除</a>
+      </td>
     </tr>
 HEREDOC;
 }
@@ -113,7 +115,7 @@ $html = <<< HEREDOC
       <th>身高</th>
       <th>體重</th>
       <th>備註</th>
-      <th class="table-info" colspan="3" align="center"><a href="add.php">新增記錄</a></th>
+      <th align="center"  class="table-secondary"><a href="add.php" class="btn btn-success">新增記錄</a></th>
    </tr>
 {$data}
 </table>
